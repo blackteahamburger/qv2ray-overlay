@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+	<repo quality="experimental" status="unofficial">
+	<name>qv2ray-overlay</name>
+	<description>overlay for Qv2ray</description>
+	<homepage>https://github.com/blackteahamburger/qv2ray-overlay/</homepage>
+	<owner type="person">
+		<name>blackteahamburger</name>
+		<email>blackteahamburger@outlook.com</email>
+	</owner>
+	<source type="git">https://github.com/blackteahamburger/qv2ray-overlay.git</source>
+	</repo>
+</repositories>

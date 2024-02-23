@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<name>blackteahamburger</name>
+		<email>blackteahamburger@outlook.com</email>
+	</maintainer>
+	<use>
+		<flag name="tcpfastopen">Force build with TCP Fast Open support</flag>
+		<flag name="nat">Build with nat support</flag>
+		<flag name="reuseport">Build with SO_REUSEPORT support</flag>
+	</use>
+</pkgmetadata>

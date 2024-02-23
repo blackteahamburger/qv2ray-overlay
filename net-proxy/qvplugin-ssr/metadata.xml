@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<name>blackteahamburger</name>
+		<email>blackteahamburger@outlook.com</email>
+	</maintainer>
+	<use>
+		<flag name="system-libuv">Use system dev-libs/libuv instead of the bundled library</flag>
+		<flag name="system-libsodium">Use system dev-libs/libsodium instead of the bundled library</flag>
+	</use>
+</pkgmetadata>
