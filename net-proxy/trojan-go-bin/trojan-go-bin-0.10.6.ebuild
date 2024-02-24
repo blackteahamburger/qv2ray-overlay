@@ -15,7 +15,7 @@ SRC_URI="
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 ~arm"
+KEYWORDS="-* ~amd64 ~arm ~x86"
 RESTRICT="mirror"
 
 RDEPEND="

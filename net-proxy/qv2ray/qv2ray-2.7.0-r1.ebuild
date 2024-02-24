@@ -16,15 +16,15 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="qml qt6 +system-libuv test +themes"
+IUSE="qml-ui qt6 +system-libuv test +themes"
 RESTRICT="!test? ( test )"
 
 REQUIRED_USE="
-	qml? ( qt6 )
+	qml-ui? ( qt6 )
 "
 
 DEPEND="
-	qml? ( dev-qt/qtdeclarative:6 )
+	qml-ui? ( dev-qt/qtdeclarative:6 )
 	!qt6? (
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
@@ -42,7 +42,7 @@ DEPEND="
 	net-misc/curl
 "
 if [[ ${PV} == 9999 ]]; then
-	# dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geoip and app-alternatives/v2ray-geosite
+	# dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
 	# https://github.com/Qv2ray/Qv2ray/issues/1717
 	RDEPEND="
 		|| ( =net-proxy/v2ray-bin-5* =net-proxy/v2ray-5* )
@@ -85,7 +85,7 @@ src_configure() {
 		-DQV2RAY_DEFAULT_VCORE_PATH="/usr/bin/v2ray"
 		-DQV2RAY_DISABLE_AUTO_UPDATE=ON
 		-DQV2RAY_HAS_BUILTIN_THEMES=$(usex themes)
-		-DQV2RAY_UI_TYPE=$(usex qml QML QWidget)
+		-DQV2RAY_UI_TYPE=$(usex qml-ui QML QWidget)
 		-DQV2RAY_QT6=$(usex qt6)
 		-DUSE_SYSTEM_LIBUV=$(usex system-libuv)
 	)

@@ -5,7 +5,7 @@ EAPI=8
 
 MY_PV=$(ver_rs 4 -)
 
-DESCRIPTION="NaiveProxy uses Chromium's network stack to camouflage traffic with strong censorship resistence and low detectablility"
+DESCRIPTION="A proxy using Chromium's network stack to camouflage traffic"
 HOMEPAGE="https://github.com/klzgrad/naiveproxy"
 SRC_URI="
 	amd64? ( https://github.com/klzgrad/naiveproxy/releases/download/v${MY_PV}/naiveproxy-v${MY_PV}-linux-x64.tar.xz )
@@ -15,9 +15,9 @@ SRC_URI="
 	riscv? ( https://github.com/klzgrad/naiveproxy/releases/download/v${MY_PV}/naiveproxy-v${MY_PV}-linux-riscv64.tar.xz )
 "
 
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 ~arm ~arm64 ~riscv"
+KEYWORDS="-* ~amd64 ~arm ~arm64 ~riscv ~x86"
 RESTRICT="mirror"
 
 RDEPEND="
@@ -42,5 +42,5 @@ src_install() {
 	insinto /opt/naiveproxy
 	doins config.json naive USAGE.txt
 	fperms +x /opt/naiveproxy/naive
-	dosym /opt/naiveproxy/naive /usr/bin/naive
+	dosym -r /opt/naiveproxy/naive /usr/bin/naive
 }

@@ -5,4 +5,7 @@
 		<name>blackteahamburger</name>
 		<email>blackteahamburger@outlook.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">p4gefau1t/trojan-go</remote-id>
+	</upstream>
 </pkgmetadata>

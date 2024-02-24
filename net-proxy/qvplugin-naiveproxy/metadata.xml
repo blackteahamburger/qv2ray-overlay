@@ -5,4 +5,7 @@
 		<name>blackteahamburger</name>
 		<email>blackteahamburger@outlook.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">Qv2ray/QvPlugin-NaiveProxy</remote-id>
+	</upstream>
 </pkgmetadata>

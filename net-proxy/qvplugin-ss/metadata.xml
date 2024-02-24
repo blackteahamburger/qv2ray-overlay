@@ -10,4 +10,7 @@
 		<flag name="system-libsodium">Use system dev-libs/libsodium instead of the bundled library</flag>
 		<flag name="system-mbedtls">Use system net-libs/mbedtls instead of the bundled library</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">Qv2ray/QvPlugin-SS</remote-id>
+	</upstream>
 </pkgmetadata>

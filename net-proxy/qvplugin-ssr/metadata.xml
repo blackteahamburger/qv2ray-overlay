@@ -9,4 +9,7 @@
 		<flag name="system-libuv">Use system dev-libs/libuv instead of the bundled library</flag>
 		<flag name="system-libsodium">Use system dev-libs/libsodium instead of the bundled library</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">Qv2ray/QvPlugin-SSR</remote-id>
+	</upstream>
 </pkgmetadata>

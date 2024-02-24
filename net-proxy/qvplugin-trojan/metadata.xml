@@ -10,4 +10,7 @@
 		<flag name="nat">Build with nat support</flag>
 		<flag name="reuseport">Build with SO_REUSEPORT support</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">Qv2ray/QvPlugin-Trojan</remote-id>
+	</upstream>
 </pkgmetadata>

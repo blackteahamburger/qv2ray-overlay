@@ -37,7 +37,7 @@ RDEPEND="
 "
 
 PATCHES=(
-        "${FILESDIR}/minsigstksz.patch"
+	"${FILESDIR}/minsigstksz.patch"
 )
 
 pkg_setup() {
