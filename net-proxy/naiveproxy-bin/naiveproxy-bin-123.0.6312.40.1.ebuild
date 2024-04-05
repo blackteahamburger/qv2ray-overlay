@@ -36,7 +36,7 @@ else
 	MY_ARCH=${ARCH}
 fi
 
-S=${WORKDIR}/naiveproxy-v${MY_PV}-linux-${MY_ARCH}
+S=${WORKDIR}/${PN/-bin}-v${MY_PV}-linux-${MY_ARCH}
 
 src_install() {
 	insinto /opt/naiveproxy
