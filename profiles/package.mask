@@ -8,3 +8,7 @@ net-proxy/qvplugin-ssr
 # blackteahamburger <blackteahamburger@outlook.com>
 # The plugin built has unresolved soname dependency libLIBBLOOM.so
 net-proxy/qvplugin-ss
+
+# blakcteahamburger <blackteahamburger@outlook.com>
+# Causes V2ray kernel to crash, https://github.com/Qv2ray/Qv2ray/issues/1717
+net-proxy/qvplugin-trojan-go

@@ -23,11 +23,11 @@ DEPEND="
 "
 RDEPEND="
 	!net-proxy/trojan-go-bin
+	!net-proxy/trojan-go-fork
+	!net-proxy/trojan-go-fork-bin
 	${DEPEND}
 "
 BDEPEND="dev-lang/go"
-
-S=${WORKDIR}/trojan-go-${PV}
 
 src_compile() {
 	ego build -tags "full"
