@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/Qv2ray/Qv2ray"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
 if [[ ${PV} != 9999 ]]; then
-	EGIT_COMMIT="v${PV}"
+	EGIT_COMMIT="86a078226816595f69821d9819ee527a4f0e598d"
 	KEYWORDS="~amd64 ~x86"
 fi
 
@@ -41,21 +41,12 @@ DEPEND="
 	dev-libs/protobuf:=
 	net-misc/curl
 "
-if [[ ${PV} == 9999 ]]; then
-	# dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
-	# https://github.com/Qv2ray/Qv2ray/issues/1717
-	RDEPEND="
-		|| ( =net-proxy/v2ray-bin-5* =net-proxy/v2ray-5* )
-		!app-alternatives/v2ray-geoip[loyalsoldier]
-		!app-alternatives/v2ray-geosite[loyalsoldier]
-	"
-else
-	RDEPEND="
-		|| ( =net-proxy/v2ray-bin-4* =net-proxy/v2ray-4* )
-	"
-fi
+# dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
+# https://github.com/Qv2ray/Qv2ray/issues/1717
 RDEPEND="
-	${RDEPEND}
+	|| ( =net-proxy/v2ray-bin-5* =net-proxy/v2ray-5* )
+	!app-alternatives/v2ray-geoip[loyalsoldier]
+	!app-alternatives/v2ray-geosite[loyalsoldier]
 	dev-libs/openssl:0=
 	${DEPEND}
 "

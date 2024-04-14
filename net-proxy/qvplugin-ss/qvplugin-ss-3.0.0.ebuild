@@ -8,11 +8,7 @@ inherit cmake git-r3
 DESCRIPTION="Plugin for Qv2ray to support SIP003 in Qv2ray"
 HOMEPAGE="https://github.com/Qv2ray/QvPlugin-SS"
 EGIT_REPO_URI="${HOMEPAGE}.git"
-
-if [[ ${PV} != 9999 ]]; then
-	EGIT_COMMIT="v${PV}"
-	KEYWORDS="~amd64 ~x86"
-fi
+EGIT_COMMIT="v${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"

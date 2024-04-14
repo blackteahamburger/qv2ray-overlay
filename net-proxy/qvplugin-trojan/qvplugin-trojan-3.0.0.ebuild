@@ -8,14 +8,11 @@ inherit cmake git-r3
 DESCRIPTION="Plugin for Qv2ray to support Trojan proxy in Qv2ray"
 HOMEPAGE="https://github.com/Qv2ray/QvPlugin-Trojan"
 EGIT_REPO_URI="${HOMEPAGE}.git"
-
-if [[ ${PV} != 9999 ]]; then
-	EGIT_COMMIT="v${PV}"
-	KEYWORDS="~amd64 ~x86"
-fi
+EGIT_COMMIT="v${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
 IUSE="qt6 +tcpfastopen nat reuseport"
 
 DEPEND="
