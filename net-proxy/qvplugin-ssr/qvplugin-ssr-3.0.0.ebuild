@@ -12,7 +12,6 @@ EGIT_COMMIT="v${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="qt6 +system-libuv +system-libsodium"
 
 DEPEND="
