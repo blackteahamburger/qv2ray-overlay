@@ -3,7 +3,7 @@
 
 EAPI=8
 
-MY_PV=$(ver_rs 4 -)
+MY_PV=$(ver_cut 1-4)-$(ver_cut 6)
 
 DESCRIPTION="A proxy using Chromium's network stack to camouflage traffic"
 HOMEPAGE="https://github.com/klzgrad/naiveproxy"
@@ -20,6 +20,19 @@ SRC_URI="
 	x86? ( ${DIST_URI}-x86.tar.xz )
 "
 
+case ${ARCH} in
+	amd64)	MY_ARCH=x64;;
+	mips)	if use abi_mips_o32; then
+			MY_ARCH=mipsel
+		elif use abi_mips_n64; then
+			MY_ARCH=mips64el
+		fi;;
+	riscv)	MY_ARCH=riscv64;;
+	*)	MY_ARCH=${ARCH};;
+esac
+
+S=${WORKDIR}/naiveproxy-v${MY_PV}-linux-${MY_ARCH}
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm ~arm64 ~mips ~riscv ~x86"
@@ -34,19 +47,6 @@ RDEPEND="
 QA_PREBUILT="
 	/opt/naiveproxy/naive
 "
-
-case ${ARCH} in
-	amd64)	MY_ARCH=x64;;
-	mips)	if use abi_mips_o32; then
-			MY_ARCH=mipsel
-		elif use abi_mips_n64; then
-			MY_ARCH=mips64el
-		fi;;
-	riscv)	MY_ARCH=riscv64;;
-	*)	MY_ARCH=${ARCH};;
-esac
-
-S=${WORKDIR}/naiveproxy-v${MY_PV}-linux-${MY_ARCH}
 
 src_install() {
 	insinto /opt/naiveproxy
