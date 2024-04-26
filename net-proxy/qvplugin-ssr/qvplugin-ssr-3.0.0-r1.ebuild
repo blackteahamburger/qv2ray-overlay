@@ -27,7 +27,7 @@ DEPEND="
 	dev-libs/openssl:0=
 "
 RDEPEND="
-	>=net-proxy/qv2ray-2.7.0[qt6?]
+	>=net-proxy/qv2ray-2.7.0[qt6=]
 	${DEPEND}
 "
 
