@@ -6,7 +6,6 @@
 		<email>blackteahamburger@outlook.com</email>
 	</maintainer>
 	<use>
-		<flag name="qml-ui">Enable QML type of GUI (needs Qt 6)</flag>
 		<flag name="system-libuv">Use system dev-libs/libuv instead of the bundled library</flag>
 		<flag name="themes">Build with built-in themes</flag>
 	</use>

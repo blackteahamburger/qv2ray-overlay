@@ -16,15 +16,10 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="qml-ui qt6 +system-libuv test +themes"
+IUSE="qt6 +system-libuv test +themes"
 RESTRICT="!test? ( test )"
 
-REQUIRED_USE="
-	qml-ui? ( qt6 )
-"
-
 DEPEND="
-	qml-ui? ( dev-qt/qtdeclarative:6 )
 	!qt6? (
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
@@ -76,7 +71,6 @@ src_configure() {
 		-DQV2RAY_DEFAULT_VCORE_PATH="/usr/bin/v2ray"
 		-DQV2RAY_DISABLE_AUTO_UPDATE=ON
 		-DQV2RAY_HAS_BUILTIN_THEMES=$(usex themes)
-		-DQV2RAY_UI_TYPE=$(usex qml-ui QML QWidget)
 		-DQV2RAY_QT6=$(usex qt6)
 		-DUSE_SYSTEM_LIBUV=$(usex system-libuv)
 	)
