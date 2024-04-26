@@ -6,7 +6,7 @@
 net-proxy/qvplugin-ssr
 
 # blackteahamburger <blackteahamburger@outlook.com>
-# The plugin built has unresolved soname dependency libLIBBLOOM.so
+# The plugin built has security problem NULL DT_RUNPATH and unresolved soname dependency libLIBBLOOM.so
 net-proxy/qvplugin-ss
 
 # blakcteahamburger <blackteahamburger@outlook.com>

@@ -54,8 +54,6 @@ pkg_setup() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_BUILD_WITH_INSTALL_RPATH=TRUE
-		-DCMAKE_INSTALL_RPATH="\$ORIGIN"
 		-DQVPLUGIN_USE_QT6=$(usex qt6)
 		-DSSR_UVW_WITH_QT=1
 		-DUSE_SYSTEM_LIBUV=$(usex system-libuv)
