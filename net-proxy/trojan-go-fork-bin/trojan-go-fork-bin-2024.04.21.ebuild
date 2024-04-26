@@ -44,6 +44,8 @@ SRC_URI="
 	)
 "
 
+S=${WORKDIR}
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~loong ~mips ~ppc64 ~riscv ~s390 ~x86"
@@ -66,8 +68,6 @@ BDEPEND="app-arch/unzip"
 QA_PREBUILT="
 	/usr/bin/trojan-go-fork
 "
-
-S=${WORKDIR}
 
 src_install() {
 	dobin trojan-go-fork
