@@ -18,6 +18,3 @@ Qv2ray and its plugins are no longer maintained: https://github.com/Qv2ray/Depre
 I'm not very experienced in writing ebuilds, if you find any issues, feel free to contribute.
 
 Also, please help to fix packages in package.mask!
-
-## Todo
-[Shadowsocks-NET/Qv2ray](https://github.com/Shadowsocks-NET/Qv2ray) and [Shadowsocks-NET/QvPlugins](https://github.com/Shadowsocks-NET/QvPlugins): A branch still under maintenance?
