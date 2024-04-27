@@ -24,7 +24,7 @@ RDEPEND="
 	!net-proxy/trojan-go-fork-bin
 	${DEPEND}
 "
-BDEPEND="dev-lang/go"
+BDEPEND=">=dev-lang/go-1.22"
 
 src_compile() {
 	ego build -tags "full"
