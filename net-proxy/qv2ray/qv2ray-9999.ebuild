@@ -80,8 +80,6 @@ src_configure() {
 
 	local mycmakeargs=(
 		-DBUILD_TESTING=$(usex test)
-		-DQV2RAY_DEFAULT_VASSETS_PATH="/usr/share/v2ray"
-		-DQV2RAY_DEFAULT_VCORE_PATH="/usr/bin/v2ray"
 		-DQV2RAY_DISABLE_AUTO_UPDATE=ON
 		-DQV2RAY_HAS_BUILTIN_THEMES=$(usex themes)
 		-DQV2RAY_QT6=$(usex qt6)
