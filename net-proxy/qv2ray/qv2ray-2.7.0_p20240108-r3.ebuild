@@ -16,7 +16,7 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="qt6 +system-libuv test +themes"
+IUSE="qt6 +system-libuv test +themes v4-core"
 RESTRICT="!test? ( test )"
 
 DEPEND="
@@ -37,15 +37,24 @@ DEPEND="
 	net-misc/curl
 "
 # dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
+# when using V2ray v5 core
 # https://github.com/Qv2ray/Qv2ray/issues/1717
 RDEPEND="
-	|| (
-		=net-proxy/v2ray-bin-5*
-		=net-proxy/v2ray-5*
-		net-proxy/Xray
-	)
-	!app-alternatives/v2ray-geoip[loyalsoldier]
-	!app-alternatives/v2ray-geosite[loyalsoldier]
+	!v4-core? (
+			|| (
+				=net-proxy/v2ray-bin-5*
+				=net-proxy/v2ray-5*
+			)
+			!app-alternatives/v2ray-geoip[loyalsoldier]
+			!app-alternatives/v2ray-geosite[loyalsoldier]
+		)
+	v4-core? (
+			|| (
+				=net-proxy/v2ray-bin-4*
+				=net-proxy/v2ray-4*
+				net-proxy/Xray
+			)
+		)
 	dev-libs/openssl:0=
 	${DEPEND}
 "
@@ -76,6 +85,7 @@ src_configure() {
 		-DQV2RAY_DISABLE_AUTO_UPDATE=ON
 		-DQV2RAY_HAS_BUILTIN_THEMES=$(usex themes)
 		-DQV2RAY_QT6=$(usex qt6)
+		-DQV2RAY_USE_V5_CORE=$(usex !v4-core)
 		-DUSE_SYSTEM_LIBUV=$(usex system-libuv)
 	)
 	cmake_src_configure

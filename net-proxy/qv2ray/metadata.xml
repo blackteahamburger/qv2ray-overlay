@@ -8,6 +8,7 @@
 	<use>
 		<flag name="system-libuv">Use system dev-libs/libuv instead of the bundled library</flag>
 		<flag name="themes">Build with built-in themes</flag>
+		<flag name="v4-core">Use V2ray v4 or Xray core</flag>
 	</use>
 	<upstream>
 		<remote-id type="github">Qv2ray/Qv2ray</remote-id>

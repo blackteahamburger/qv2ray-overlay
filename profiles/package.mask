@@ -12,7 +12,3 @@ net-proxy/qvplugin-ss
 # blakcteahamburger <blackteahamburger@outlook.com>
 # Causes V2ray kernel to crash, https://github.com/Qv2ray/Qv2ray/issues/1717
 net-proxy/qvplugin-trojan-go
-
-# blakcteahamburger <blackteahamburger@outlook.com>
-# Unsupported, unmask if you really want to build net-proxy/v2ray-4.45.2
-=dev-lang/go-1.19.13
