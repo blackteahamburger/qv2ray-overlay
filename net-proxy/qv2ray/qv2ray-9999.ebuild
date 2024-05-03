@@ -39,7 +39,11 @@ DEPEND="
 # dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
 # https://github.com/Qv2ray/Qv2ray/issues/1717
 RDEPEND="
-	|| ( =net-proxy/v2ray-bin-5* =net-proxy/v2ray-5* )
+	|| (
+		=net-proxy/v2ray-bin-5*
+		=net-proxy/v2ray-5*
+		net-proxy/Xray
+	)
 	!app-alternatives/v2ray-geoip[loyalsoldier]
 	!app-alternatives/v2ray-geosite[loyalsoldier]
 	dev-libs/openssl:0=

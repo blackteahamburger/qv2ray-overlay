@@ -8,14 +8,11 @@ inherit cmake xdg git-r3 flag-o-matic
 DESCRIPTION="Qt GUI fontend of v2ray"
 HOMEPAGE="https://github.com/Qv2ray/Qv2ray"
 EGIT_REPO_URI="${HOMEPAGE}.git"
-
-if [[ ${PV} != 9999 ]]; then
-	EGIT_COMMIT="86a078226816595f69821d9819ee527a4f0e598d"
-	KEYWORDS="~amd64 ~x86"
-fi
+EGIT_COMMIT="v${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
 IUSE="qt6 +system-libuv test +themes"
 RESTRICT="!test? ( test )"
 
@@ -36,12 +33,12 @@ DEPEND="
 	dev-libs/protobuf:=
 	net-misc/curl
 "
-# dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
-# https://github.com/Qv2ray/Qv2ray/issues/1717
 RDEPEND="
-	|| ( =net-proxy/v2ray-bin-5* =net-proxy/v2ray-5* )
-	!app-alternatives/v2ray-geoip[loyalsoldier]
-	!app-alternatives/v2ray-geosite[loyalsoldier]
+	|| (
+		=net-proxy/v2ray-bin-4*
+		=net-proxy/v2ray-4*
+		net-proxy/Xray
+	)
 	dev-libs/openssl:0=
 	${DEPEND}
 "
