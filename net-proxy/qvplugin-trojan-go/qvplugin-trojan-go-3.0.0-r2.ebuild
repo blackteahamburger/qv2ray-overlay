@@ -25,7 +25,12 @@ DEPEND="
 "
 RDEPEND="
 	>=net-proxy/qv2ray-2.7.0[qt6=]
-	|| ( net-proxy/trojan-go-bin net-proxy/trojan-go net-proxy/trojan-go-fork-bin net-proxy/trojan-go-fork )
+	|| (
+		net-proxy/trojan-go-bin
+		net-proxy/trojan-go
+		net-proxy/trojan-go-fork-bin
+		net-proxy/trojan-go-fork
+	)
 	${DEPEND}
 "
 
