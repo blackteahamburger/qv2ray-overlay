@@ -42,6 +42,8 @@ SRC_URI="
 	x86? ( ${DIST_URI}-386.zip -> ${BASE_NAME}-386.zip )
 "
 
+S=${WORKDIR}
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm ~mips ~x86"
@@ -49,10 +51,12 @@ IUSE="abi_mips_n64 abi_mips_o32 big-endian cpu_flags_arm_v5 cpu_flags_arm_v7 cpu
 REQUIRED_USE="mips? ( || ( abi_mips_n64 abi_mips_o32 ) )"
 RESTRICT="mirror"
 
+DEPEND="|| ( app-alternatives/v2ray-geoip app-alternatives/v2ray-geosite )"
 RDEPEND="
 	!net-proxy/trojan-go
 	!net-proxy/trojan-go-fork
 	!net-proxy/trojan-go-fork-bin
+	${DEPEND}
 "
 BDEPEND="app-arch/unzip"
 
@@ -60,13 +64,11 @@ QA_PREBUILT="
 	/usr/bin/trojan-go
 "
 
-S=${WORKDIR}
-
 src_install() {
 	dobin trojan-go
 
-	insinto /usr/share/trojan-go
-	doins *.dat
+	dosym -r /usr/share/v2ray/geosite.dat /usr/share/trojan-go/geosite.dat
+	dosym -r /usr/share/v2ray/geoip.dat /usr/share/trojan-go/geoip.dat
 
 	insinto /etc/trojan-go
 	doins example/*.json

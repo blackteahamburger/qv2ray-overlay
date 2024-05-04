@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 
-DEPEND="|| ( ( app-alternatives/v2ray-geoip app-alternatives/v2ray-geosite ) net-proxy/v2ray-bin )"
+DEPEND="|| ( app-alternatives/v2ray-geoip app-alternatives/v2ray-geosite )"
 RDEPEND="
 	!net-proxy/trojan-go
 	!net-proxy/trojan-go-bin

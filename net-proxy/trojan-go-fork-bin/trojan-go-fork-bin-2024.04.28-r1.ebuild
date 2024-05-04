@@ -59,10 +59,12 @@ REQUIRED_USE="
 "
 RESTRICT="mirror"
 
+DEPEND="|| ( app-alternatives/v2ray-geoip app-alternatives/v2ray-geosite )"
 RDEPEND="
 	!net-proxy/trojan-go
 	!net-proxy/trojan-go-bin
 	!net-proxy/trojan-go-fork
+	${DEPEND}
 "
 BDEPEND="app-arch/unzip"
 
@@ -74,8 +76,8 @@ src_install() {
 	dobin trojan-go-fork
 	dosym -r /usr/bin/trojan-go-fork /usr/bin/trojan-go
 
-	insinto /usr/share/trojan-go
-	doins *.dat
+	dosym -r /usr/share/v2ray/geosite.dat /usr/share/trojan-go/geosite.dat
+	dosym -r /usr/share/v2ray/geoip.dat /usr/share/trojan-go/geoip.dat
 
 	insinto /etc/trojan-go
 	doins example/*.json
