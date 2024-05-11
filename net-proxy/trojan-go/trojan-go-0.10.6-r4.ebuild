@@ -9,7 +9,7 @@ DESCRIPTION="A Trojan proxy written in Go"
 HOMEPAGE="https://github.com/p4gefau1t/trojan-go"
 SRC_URI="
 	https://github.com/p4gefau1t/trojan-go/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/blackteahamburger/gentoo-go-deps/releases/download/${P}/${P}-deps.tar.xz
+	https://github.com/blackteahamburger/gentoo-go-deps/releases/download/${P}/${P}-vendor.tar.xz
 "
 
 LICENSE="GPL-3"

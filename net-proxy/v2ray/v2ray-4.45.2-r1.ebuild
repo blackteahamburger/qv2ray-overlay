@@ -11,7 +11,7 @@ DESCRIPTION="A platform for building proxies to bypass network restrictions."
 HOMEPAGE="https://www.v2fly.org/"
 SRC_URI="
 	https://github.com/blackteahamburger/v2ray-core/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/blackteahamburger/gentoo-go-deps/releases/download/${P}/${P}-deps.tar.xz
+	https://github.com/blackteahamburger/gentoo-go-deps/releases/download/${P}/${P}-vendor.tar.xz
 "
 
 S="${WORKDIR}/${PN}-core-${PV}"
