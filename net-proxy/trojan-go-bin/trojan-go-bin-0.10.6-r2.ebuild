@@ -8,38 +8,38 @@ inherit systemd
 DESCRIPTION="A Trojan proxy written in Go"
 HOMEPAGE="https://github.com/p4gefau1t/trojan-go"
 DIST_URI="https://github.com/p4gefau1t/trojan-go/releases/download/v${PV}/trojan-go-linux"
-BASE_NAME="trojan-go-${PV}-linux"
+MY_P=trojan-go-${PV}
 SRC_URI="
-	amd64? ( ${DIST_URI}-amd64.zip -> ${BASE_NAME}-amd64.zip )
+	amd64? ( ${DIST_URI}-amd64.zip -> ${MY_P}-amd64.zip )
 	arm? (
-		cpu_flags_arm_v5? ( ${DIST_URI}-armv5.zip -> ${BASE_NAME}-armv5.zip )
-		cpu_flags_arm_v6? ( ${DIST_URI}-armv6.zip -> ${BASE_NAME}-armv6.zip )
-		cpu_flags_arm_v7? ( ${DIST_URI}-armv7.zip -> ${BASE_NAME}-armv7.zip )
-		cpu_flags_arm_v8? ( ${DIST_URI}-armv8.zip -> ${BASE_NAME}-armv8.zip )
+		cpu_flags_arm_v5? ( ${DIST_URI}-armv5.zip -> ${MY_P}-armv5.zip )
+		cpu_flags_arm_v6? ( ${DIST_URI}-armv6.zip -> ${MY_P}-armv6.zip )
+		cpu_flags_arm_v7? ( ${DIST_URI}-armv7.zip -> ${MY_P}-armv7.zip )
+		cpu_flags_arm_v8? ( ${DIST_URI}-armv8.zip -> ${MY_P}-armv8.zip )
 		!cpu_flags_arm_v5? (
 		!cpu_flags_arm_v6? (
 		!cpu_flags_arm_v7? (
 		!cpu_flags_arm_v8? (
-			${DIST_URI}-arm.zip -> ${BASE_NAME}-arm.zip
+			${DIST_URI}-arm.zip -> ${MY_P}-arm.zip
 		) ) ) )
 	)
 	mips? (
 		abi_mips_o32? (
 			big-endian? (
-				softfloat? ( ${DIST_URI}-mips-softfloat.zip -> ${BASE_NAME}-mips-softfloat.zip )
-				!softfloat? ( ${DIST_URI}-mips-hardfloat.zip -> ${BASE_NAME}-mips-hardfloat.zip )
+				softfloat? ( ${DIST_URI}-mips-softfloat.zip -> ${MY_P}-mips-softfloat.zip )
+				!softfloat? ( ${DIST_URI}-mips-hardfloat.zip -> ${MY_P}-mips-hardfloat.zip )
 			)
 			!big-endian? (
-				softfloat? ( ${DIST_URI}-mipsle-softfloat.zip -> ${BASE_NAME}-mipsle-softfloat.zip )
-				!softfloat? ( ${DIST_URI}-mipsle-hardfloat.zip -> ${BASE_NAME}-mipsle-hardfloat.zip )
+				softfloat? ( ${DIST_URI}-mipsle-softfloat.zip -> ${MY_P}-mipsle-softfloat.zip )
+				!softfloat? ( ${DIST_URI}-mipsle-hardfloat.zip -> ${MY_P}-mipsle-hardfloat.zip )
 			)
 		)
 		abi_mips_n64? (
-			big-endian? ( ${DIST_URI}-mips64.zip -> ${BASE_NAME}-mips64.zip )
-			!big-endian? ( ${DIST_URI}-mips64le.zip -> ${BASE_NAME}-mips64le.zip )
+			big-endian? ( ${DIST_URI}-mips64.zip -> ${MY_P}-mips64.zip )
+			!big-endian? ( ${DIST_URI}-mips64le.zip -> ${MY_P}-mips64le.zip )
 		)
 	)
-	x86? ( ${DIST_URI}-386.zip -> ${BASE_NAME}-386.zip )
+	x86? ( ${DIST_URI}-386.zip -> ${MY_P}-386.zip )
 "
 
 S=${WORKDIR}
