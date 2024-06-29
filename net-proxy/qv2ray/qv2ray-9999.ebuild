@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/Qv2ray/Qv2ray"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
 if [[ ${PV} != 9999 ]]; then
-	EGIT_COMMIT="86a078226816595f69821d9819ee527a4f0e598d"
+	EGIT_COMMIT="d5c5aeb366e2fbe9c9243648af36b0d11da14920"
 	KEYWORDS="~amd64 ~x86"
 fi
 
