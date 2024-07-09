@@ -5,10 +5,10 @@ EAPI=8
 
 inherit systemd go-module
 
-DESCRIPTION="A Trojan proxy written in Go"
-HOMEPAGE="https://github.com/p4gefau1t/trojan-go"
+DESCRIPTION="A fork of trojan-go"
+HOMEPAGE="https://github.com/Potterli20/trojan-go-fork"
 SRC_URI="
-	https://github.com/p4gefau1t/trojan-go/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/Potterli20/trojan-go-fork/archive/refs/tags/V${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/blackteahamburger/gentoo-go-deps/releases/download/${P}/${P}-vendor.tar.xz
 "
 
@@ -19,19 +19,18 @@ RESTRICT="mirror"
 
 DEPEND="|| ( app-alternatives/v2ray-geoip app-alternatives/v2ray-geosite )"
 RDEPEND="
-	!net-proxy/trojan-go-bin
-	!net-proxy/trojan-go-fork
-	!net-proxy/trojan-go-fork-bin
+	!net-proxy/trojan-go
 	${DEPEND}
 "
-BDEPEND="dev-lang/go"
+BDEPEND=">=dev-lang/go-1.22"
 
 src_compile() {
 	ego build -tags "full"
 }
 
 src_install() {
-	dobin trojan-go
+	dobin trojan-go-fork
+	dosym -r /usr/bin/trojan-go-fork /usr/bin/trojan-go
 
 	insinto /etc/trojan-go
 	doins example/*.json
