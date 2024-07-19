@@ -11,7 +11,7 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 if [[ ${PV} != 9999 ]]; then
 	EGIT_COMMIT="d5c5aeb366e2fbe9c9243648af36b0d11da14920"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-3"

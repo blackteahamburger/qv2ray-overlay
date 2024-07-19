@@ -18,7 +18,7 @@ S="${WORKDIR}/${PN}-core-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+tool"
 
 RESTRICT="mirror"
