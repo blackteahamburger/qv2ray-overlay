@@ -6,7 +6,7 @@ This overlay contains Qv2ray, its plugins and (part of) their dependencies.
 ## Usage
 `eselect repository enable qv2ray-overlay`
 
-## Warning
+## Note
 Qv2ray and its plugins are no longer maintained: https://github.com/Qv2ray/Deprecation-Notice (actually Qv2ray still has certain maintenance)
 
 ## Dependencies
