@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit go-module systemd
+inherit go-module
 
 DESCRIPTION="Community managed domain list for V2Ray."
 HOMEPAGE="https://github.com/v2fly/domain-list-community"
