@@ -36,8 +36,7 @@ DEPEND="
 	dev-libs/protobuf:=
 	net-misc/curl
 "
-# dev-libs/v2ray-rules-dat is not allowed as an alternative implementation of app-alternatives/v2ray-geo{ip,site}
-# when using V2ray v5 core
+# app-alternatives/v2ray-geo{ip,site}[loyalsoldier] cause V2ray v5 core to crash
 # https://github.com/Qv2ray/Qv2ray/issues/1717
 RDEPEND="
 	!v4-core? (

@@ -5,7 +5,7 @@ EAPI=8
 
 ALTERNATIVES=(
 	v2fly:virtual/v2ray-domain-list-community
-	"loyalsoldier:dev-libs/v2ray-rules-dat[geosite]"
+	"loyalsoldier:dev-libs/v2ray-rules-dat-bin[geosite]"
 )
 
 inherit app-alternatives
