@@ -18,10 +18,7 @@ KEYWORDS="~amd64"
 RESTRICT="mirror"
 
 DEPEND="|| ( app-alternatives/v2ray-geoip app-alternatives/v2ray-geosite )"
-RDEPEND="
-	!net-proxy/trojan-go
-	${DEPEND}
-"
+RDEPEND="${DEPEND}"
 BDEPEND=">=dev-lang/go-1.22"
 
 src_compile() {
