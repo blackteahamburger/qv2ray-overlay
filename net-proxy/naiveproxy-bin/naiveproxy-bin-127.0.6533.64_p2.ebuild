@@ -3,7 +3,7 @@
 
 EAPI=8
 
-MY_PV=$(ver_cut 1-4)-$(ver_cut 6)
+MY_PV=${PV/_p/-}
 
 DESCRIPTION="A proxy using Chromium's network stack to camouflage traffic"
 HOMEPAGE="https://github.com/klzgrad/naiveproxy"
