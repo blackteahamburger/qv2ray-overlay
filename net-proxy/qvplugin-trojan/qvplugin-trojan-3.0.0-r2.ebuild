@@ -13,7 +13,7 @@ EGIT_COMMIT="v${PV}"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="qt6 +tcpfastopen nat reuseport"
+IUSE="qt6 +tcpfastopen +nat +reuseport"
 
 DEPEND="
 	!qt6? (
