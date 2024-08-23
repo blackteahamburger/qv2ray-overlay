@@ -15,3 +15,6 @@ Qv2ray and its plugins are no longer maintained: https://github.com/Qv2ray/Depre
 
 ## Contributing
 Please help to fix packages in `profile/package.mask`.
+
+## Todo
+Get rid of git submodules. Remove bundled library.
