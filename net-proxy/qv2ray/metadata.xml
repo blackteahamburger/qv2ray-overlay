@@ -6,7 +6,6 @@
 		<email>blackteahamburger@outlook.com</email>
 	</maintainer>
 	<use>
-		<flag name="system-libuv">Use system dev-libs/libuv instead of the bundled library</flag>
 		<flag name="themes">Build with built-in themes</flag>
 		<flag name="xray">Use Xray core</flag>
 	</use>
