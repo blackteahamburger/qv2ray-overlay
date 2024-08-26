@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/Qv2ray/Qv2ray"
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/Qv2ray/Qv2ray.git"
-	EGIT_SUBMODULES=( '*' '-3rdparty/libuv' )
+	EGIT_SUBMODULES=()
 else
 	GIT_COMMIT="d5c5aeb366e2fbe9c9243648af36b0d11da14920"
 	GIT_COMMIT_QCODEEDITOR="ed1196a91dd6415c5ad6d0e85a90630e9b3b9f6c"
@@ -96,28 +96,25 @@ BDEPEND="
 src_unpack() {
 	if [[ ${PV} == 9999 ]]; then
 		git-r3_src_unpack
-	else
-		default
-		cd "${S}/3rdparty" || die
-		rmdir QCodeEditor QJsonStruct QNodeEditor SingleApplication puresource qt-qrcode uvw || die
-		mv "${WORKDIR}/QCodeEditor-${GIT_COMMIT_QCODEEDITOR}" QCodeEditor || die
-		mv "${WORKDIR}/QJsonStruct-${GIT_COMMIT_QJSONSTRUCT}" QJsonStruct || die
-		mv "${WORKDIR}/QNodeEditor-${GIT_COMMIT_QNODEEDITOR}" QNodeEditor || die
-		mv "${WORKDIR}/SingleApplication-${SINGLEAPPLICATION_PV}" SingleApplication || die
-		mv "${WORKDIR}/PureSource-${GIT_COMMIT_PURESOURCE}" puresource || die
-		mv "${WORKDIR}/qt-qrcode-${GIT_COMMIT_QT_QRCODE}" qt-qrcode || die
-		rmdir qt-qrcode/lib/libqrencode || die
-		mv "${WORKDIR}/qrencode-${QRENCODE_PV}" qt-qrcode/lib/libqrencode || die
-		mv "${WORKDIR}/uvw-${GIT_COMMIT_UVW}" uvw || die
-		rmdir "${S}/src/plugin-interface" || die
-		mv "${WORKDIR}/QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}" "${S}/src/plugin-interface" || die
 	fi
+	default
+	cd "${S}/3rdparty" || die
+	rmdir QCodeEditor QJsonStruct QNodeEditor SingleApplication puresource qt-qrcode uvw || die
+	mv "${WORKDIR}/QCodeEditor-${GIT_COMMIT_QCODEEDITOR}" QCodeEditor || die
+	mv "${WORKDIR}/QJsonStruct-${GIT_COMMIT_QJSONSTRUCT}" QJsonStruct || die
+	mv "${WORKDIR}/QNodeEditor-${GIT_COMMIT_QNODEEDITOR}" QNodeEditor || die
+	mv "${WORKDIR}/SingleApplication-${SINGLEAPPLICATION_PV}" SingleApplication || die
+	mv "${WORKDIR}/PureSource-${GIT_COMMIT_PURESOURCE}" puresource || die
+	mv "${WORKDIR}/qt-qrcode-${GIT_COMMIT_QT_QRCODE}" qt-qrcode || die
+	rmdir qt-qrcode/lib/libqrencode || die
+	mv "${WORKDIR}/qrencode-${QRENCODE_PV}" qt-qrcode/lib/libqrencode || die
+	mv "${WORKDIR}/uvw-${GIT_COMMIT_UVW}" uvw || die
+	rmdir "${S}/src/plugin-interface" || die
+	mv "${WORKDIR}/QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}" "${S}/src/plugin-interface" || die
 }
 
 src_prepare() {
-	if [[ ${PV} != 9999 ]]; then
-		sed -i -e 's/__STATIC/STATIC_IN_RELEASE/' cmake/qrencode.cmake || die
-	fi
+	sed -i -e 's/__STATIC/STATIC_IN_RELEASE/' cmake/qrencode.cmake || die
 	cmake_src_prepare
 }
 
