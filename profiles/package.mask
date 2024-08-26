@@ -4,7 +4,3 @@
 # blackteahamburger <blackteahamburger@outlook.com>
 # Causes Qv2ray to crash, https://github.com/Qv2ray/Qv2ray/issues/1733
 net-proxy/qvplugin-ssr
-
-# blackteahamburger <blackteahamburger@outlook.com>
-# The plugin built has security problem NULL DT_RUNPATH and unresolved soname dependency libLIBBLOOM.so
-net-proxy/qvplugin-ss

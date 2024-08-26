@@ -6,9 +6,10 @@
 		<email>blackteahamburger@outlook.com</email>
 	</maintainer>
 	<use>
-		<flag name="tcpfastopen">Force build with TCP Fast Open support</flag>
+		<flag name="mysql">build with MySQL support</flag>
 		<flag name="nat">Build with NAT support</flag>
 		<flag name="reuseport">Build with SO_REUSEPORT support</flag>
+		<flag name="tcpfastopen">Force build with TCP Fast Open support</flag>
 	</use>
 	<upstream>
 		<remote-id type="github">Qv2ray/QvPlugin-Trojan</remote-id>
