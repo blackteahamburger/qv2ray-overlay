@@ -14,7 +14,9 @@ Qv2ray and its plugins are no longer maintained: https://github.com/Qv2ray/Depre
 * Other dependencies are in [gentoo-zh](https://github.com/microcai/gentoo-zh).
 
 ## Contributing
-Please help to fix packages in `profile/package.mask`.
+~~Please help to fix packages in `profile/package.mask`.~~
 
 ## Todo
-Get rid of git submodules. Remove bundled library.
+~~Remove bundled library.~~
+
+~~Fork and continue to maintain Qv2ray?~~
