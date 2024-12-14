@@ -51,6 +51,11 @@ src_unpack() {
 	mv "${WORKDIR}/trojan-${GIT_COMMIT_QV2RAY_TROJAN}" "${S}/trojan" || die
 }
 
+src_prepare() {
+	sed -i -e 's/rfc2818_verification/host_name_verification/' trojan/src/core/service.cpp || die
+	cmake_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DQVPLUGIN_USE_QT6=$(usex qt6)
