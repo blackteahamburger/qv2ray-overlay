@@ -40,7 +40,7 @@ DEPEND="
 	qt6? ( dev-qt/qtbase:6[gui,network,widgets] )
 	dev-libs/libuv:=
 	dev-libs/libsodium:=
-	net-libs/mbedtls:=
+	net-libs/mbedtls:0=
 	dev-libs/openssl:0=
 "
 RDEPEND="
