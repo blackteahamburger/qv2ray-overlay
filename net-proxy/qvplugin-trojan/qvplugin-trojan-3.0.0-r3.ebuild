@@ -9,14 +9,12 @@ DESCRIPTION="Plugin for Qv2ray to support Trojan proxy in Qv2ray"
 HOMEPAGE="https://github.com/Qv2ray/QvPlugin-Trojan"
 GIT_COMMIT_QVPLUGIN_INTERFACE="911c4adbb7b598435162da245ab248d215d3f018"
 GIT_COMMIT_QV2RAY_TROJAN="5543591f28074d1e88858d2c40fcea4197b7b711"
-QVPLUGIN_INTERFACE_PV="0_pre20210214"
-QV2RAY_TROJAN_PV="1.15.1_p20200419"
 SRC_URI="
 	https://github.com/Qv2ray/QvPlugin-Trojan/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
-		-> QvPlugin-Interface-${QVPLUGIN_INTERFACE_PV}.tar.gz
+		-> QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
 	https://github.com/Qv2ray/trojan/archive/${GIT_COMMIT_QV2RAY_TROJAN}.tar.gz
-		-> qv2ray-trojan-${QV2RAY_TROJAN_PV}.tar.gz
+		-> qv2ray-trojan-${GIT_COMMIT_QV2RAY_TROJAN}.tar.gz
 "
 
 S="${WORKDIR}/QvPlugin-Trojan-${PV}"

@@ -21,31 +21,24 @@ else
 	GIT_COMMIT_QT_QRCODE="2d57d9c6e2341689d10f9360a16a08831a4a820b"
 	GIT_COMMIT_UVW="c56c05e6daaf6d7644b46d0d0bf902f099d0a218"
 	GIT_COMMIT_QVPLUGIN_INTERFACE="911c4adbb7b598435162da245ab248d215d3f018"
-	QCODEEDITOR_PV="0_pre20230320"
-	QJSONSTRUCT_PV="0_pre20210305"
-	QNODEEDITOR_PV="2.1.7_p20210113"
 	SINGLEAPPLICATION_PV="3.5.1"
-	PURESOURCE_PV="0_pre20200727"
-	QT_QRCODE_PV="0_pre20150213"
 	QRENCODE_PV="4.0.0"
-	UVW_PV="2.12.1_p20230526"
-	QVPLUGIN_INTERFACE_PV="0_pre20210214"
 	SRC_URI="
 		https://github.com/Qv2ray/Qv2ray/archive/${GIT_COMMIT}.tar.gz -> ${P}.tar.gz
 		https://github.com/cpeditor/QCodeEditor/archive/${GIT_COMMIT_QCODEEDITOR}.tar.gz
-			-> QCodeEditor-${QCODEEDITOR_PV}.tar.gz
+			-> QCodeEditor-${GIT_COMMIT_QCODEEDITOR}.tar.gz
 		https://github.com/Qv2ray/QJsonStruct/archive/${GIT_COMMIT_QJSONSTRUCT}.tar.gz
-			-> QJsonStruct-${QJSONSTRUCT_PV}.tar.gz
+			-> QJsonStruct-${GIT_COMMIT_QJSONSTRUCT}.tar.gz
 		https://github.com/Qv2ray/QNodeEditor/archive/${GIT_COMMIT_QNODEEDITOR}.tar.gz
-			-> QNodeEditor-${QNODEEDITOR_PV}.tar.gz
+			-> QNodeEditor-${GIT_COMMIT_QNODEEDITOR}.tar.gz
 		https://github.com/itay-grudev/SingleApplication/archive/refs/tags/v${SINGLEAPPLICATION_PV}.tar.gz
 			-> SingleApplication-${SINGLEAPPLICATION_PV}.tar.gz
-		https://github.com/Qv2ray/PureSource/archive/${GIT_COMMIT_PURESOURCE}.tar.gz -> PureSource-${PURESOURCE_PV}.tar.gz
-		https://github.com/danielsanfr/qt-qrcode/archive/${GIT_COMMIT_QT_QRCODE}.tar.gz -> qt-qrcode-${QT_QRCODE_PV}.tar.gz
+		https://github.com/Qv2ray/PureSource/archive/${GIT_COMMIT_PURESOURCE}.tar.gz -> PureSource-${GIT_COMMIT_PURESOURCE}.tar.gz
+		https://github.com/danielsanfr/qt-qrcode/archive/${GIT_COMMIT_QT_QRCODE}.tar.gz -> qt-qrcode-${GIT_COMMIT_QT_QRCODE}.tar.gz
 		https://fukuchi.org/works/qrencode/qrencode-${QRENCODE_PV}.tar.bz2
-		https://github.com/skypjack/uvw/archive/${GIT_COMMIT_UVW}.tar.gz -> uvw-${UVW_PV}.tar.gz
+		https://github.com/skypjack/uvw/archive/${GIT_COMMIT_UVW}.tar.gz -> uvw-${GIT_COMMIT_UVW}.tar.gz
 		https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
-			-> QvPlugin-Interface-${QVPLUGIN_INTERFACE_PV}.tar.gz
+			-> QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
 	"
 	KEYWORDS="~amd64"
 	S="${WORKDIR}/Qv2ray-${GIT_COMMIT}"

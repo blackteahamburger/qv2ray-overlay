@@ -9,14 +9,12 @@ DESCRIPTION="Plugin for Qv2ray to support SSR in Qv2ray"
 HOMEPAGE="https://github.com/Qv2ray/QvPlugin-SSR"
 GIT_COMMIT_QVPLUGIN_INTERFACE="911c4adbb7b598435162da245ab248d215d3f018"
 GIT_COMMIT_SHADOWSOCKSR_UVW="b303c4c463fed3e6b963f93b73d8003dd5debf5c"
-QVPLUGIN_INTERFACE_PV="0_pre20210214"
-SHADOWSOCKSR_UVW_PV="0_pre20210412"
 SRC_URI="
 	https://github.com/Qv2ray/QvPlugin-SSR/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
-		-> QvPlugin-Interface-${QVPLUGIN_INTERFACE_PV}.tar.gz
+		-> QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
 	https://github.com/Qv2ray/shadowsocksr-uvw/archive/${GIT_COMMIT_SHADOWSOCKSR_UVW}.tar.gz
-		-> shadowsocksr-uvw-${SHADOWSOCKSR_UVW_PV}.tar.gz
+		-> shadowsocksr-uvw-${GIT_COMMIT_SHADOWSOCKSR_UVW}.tar.gz
 "
 
 S="${WORKDIR}/QvPlugin-SSR-${PV}"

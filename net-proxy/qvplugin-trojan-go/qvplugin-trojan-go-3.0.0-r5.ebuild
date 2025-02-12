@@ -9,14 +9,12 @@ DESCRIPTION="Plugin for Qv2ray to support Trojan-Go proxy in Qv2ray"
 HOMEPAGE="https://github.com/Qv2ray/QvPlugin-Trojan-Go"
 GIT_COMMIT_QVPLUGIN_INTERFACE="911c4adbb7b598435162da245ab248d215d3f018"
 GIT_COMMIT_QJSONSTRUCT="02416895f2f1fb826f8e9207d8bbe5804b6d0441"
-QVPLUGIN_INTERFACE_PV="0_pre20210214"
-QJSONSTRUCT_PV="0_pre20210305"
 SRC_URI="
 	https://github.com/Qv2ray/QvPlugin-Trojan-Go/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
-		-> QvPlugin-Interface-${QVPLUGIN_INTERFACE_PV}.tar.gz
+		-> QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
 	https://github.com/Qv2ray/QJsonStruct/archive/${GIT_COMMIT_QJSONSTRUCT}.tar.gz
-		-> QJsonStruct-${QJSONSTRUCT_PV}.tar.gz
+		-> QJsonStruct-${GIT_COMMIT_QJSONSTRUCT}.tar.gz
 "
 
 S="${WORKDIR}/QvPlugin-Trojan-Go-${PV}"

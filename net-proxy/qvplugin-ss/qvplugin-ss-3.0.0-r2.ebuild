@@ -10,17 +10,14 @@ HOMEPAGE="https://github.com/Qv2ray/QvPlugin-SS"
 GIT_COMMIT_QVPLUGIN_INTERFACE="911c4adbb7b598435162da245ab248d215d3f018"
 GIT_COMMIT_QJSONSTRUCT="02416895f2f1fb826f8e9207d8bbe5804b6d0441"
 GIT_COMMIT_SHADOWSOCKS_UVW="c731a8aa06d7bf560e772e6ab1b41d679a1136a2"
-QVPLUGIN_INTERFACE_PV="0_pre20210214"
-QJSONSTRUCT_PV="0_pre20210305"
-SHADOWSOCKS_UVW_PV="0_pre20210412"
 SRC_URI="
 	https://github.com/Qv2ray/QvPlugin-SS/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
-		-> QvPlugin-Interface-${QVPLUGIN_INTERFACE_PV}.tar.gz
+		-> QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
 	https://github.com/Qv2ray/QJsonStruct/archive/${GIT_COMMIT_QJSONSTRUCT}.tar.gz
-		-> QJsonStruct-${QJSONSTRUCT_PV}.tar.gz
+		-> QJsonStruct-${GIT_COMMIT_QJSONSTRUCT}.tar.gz
 	https://github.com/Qv2ray/shadowsocks-uvw/archive/${GIT_COMMIT_SHADOWSOCKS_UVW}.tar.gz
-		-> shadowsocks-uvw-${SHADOWSOCKS_UVW_PV}.tar.gz
+		-> shadowsocks-uvw-${GIT_COMMIT_SHADOWSOCKS_UVW}.tar.gz
 "
 
 S="${WORKDIR}/QvPlugin-SS-${PV}"

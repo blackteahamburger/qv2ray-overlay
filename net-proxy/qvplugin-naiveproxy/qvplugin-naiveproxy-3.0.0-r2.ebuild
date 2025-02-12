@@ -8,11 +8,10 @@ inherit cmake
 DESCRIPTION="Plugin for Qv2ray to support NaiveProxy in Qv2ray"
 HOMEPAGE="https://github.com/Qv2ray/QvPlugin-NaiveProxy"
 GIT_COMMIT_QVPLUGIN_INTERFACE="911c4adbb7b598435162da245ab248d215d3f018"
-QVPLUGIN_INTERFACE_PV="0_pre20210214"
 SRC_URI="
 	https://github.com/Qv2ray/QvPlugin-NaiveProxy/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
-		-> QvPlugin-Interface-${QVPLUGIN_INTERFACE_PV}.tar.gz
+		-> QvPlugin-Interface-${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
 "
 
 S="${WORKDIR}/QvPlugin-NaiveProxy-${PV}"
