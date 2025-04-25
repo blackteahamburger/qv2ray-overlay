@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,18 +22,10 @@ S="${WORKDIR}/QvPlugin-Command-${PV}"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="qt6"
 
-DEPEND="
-	!qt6? (
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtwidgets:5
-	)
-	qt6? ( dev-qt/qtbase:6[gui,widgets] )
-"
+DEPEND="dev-qt/qtbase:6[gui,widgets]"
 RDEPEND="
-	>=net-proxy/qv2ray-2.7.0[qt6=]
+	>=net-proxy/qv2ray-2.7.0
 	${DEPEND}
 "
 
@@ -47,7 +39,7 @@ src_unpack() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DQVPLUGIN_USE_QT6=$(usex qt6)
+		-DQVPLUGIN_USE_QT6=ON
 	)
 	cmake_src_configure
 }

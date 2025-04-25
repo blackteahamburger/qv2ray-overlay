@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -33,8 +33,10 @@ else
 			-> QNodeEditor-${GIT_COMMIT_QNODEEDITOR}.tar.gz
 		https://github.com/itay-grudev/SingleApplication/archive/refs/tags/v${SINGLEAPPLICATION_PV}.tar.gz
 			-> SingleApplication-${SINGLEAPPLICATION_PV}.tar.gz
-		https://github.com/Qv2ray/PureSource/archive/${GIT_COMMIT_PURESOURCE}.tar.gz -> PureSource-${GIT_COMMIT_PURESOURCE}.tar.gz
-		https://github.com/danielsanfr/qt-qrcode/archive/${GIT_COMMIT_QT_QRCODE}.tar.gz -> qt-qrcode-${GIT_COMMIT_QT_QRCODE}.tar.gz
+		https://github.com/Qv2ray/PureSource/archive/${GIT_COMMIT_PURESOURCE}.tar.gz
+			-> PureSource-${GIT_COMMIT_PURESOURCE}.tar.gz
+		https://github.com/danielsanfr/qt-qrcode/archive/${GIT_COMMIT_QT_QRCODE}.tar.gz
+			-> qt-qrcode-${GIT_COMMIT_QT_QRCODE}.tar.gz
 		https://fukuchi.org/works/qrencode/qrencode-${QRENCODE_PV}.tar.bz2
 		https://github.com/skypjack/uvw/archive/${GIT_COMMIT_UVW}.tar.gz -> uvw-${GIT_COMMIT_UVW}.tar.gz
 		https://github.com/Qv2ray/QvPlugin-Interface/archive/${GIT_COMMIT_QVPLUGIN_INTERFACE}.tar.gz
@@ -46,21 +48,12 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="qt6 test +themes xray"
+IUSE="test +themes xray"
 RESTRICT="!test? ( test )"
 
 DEPEND="
-	!qt6? (
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtnetwork:5
-		dev-qt/qtsvg:5
-		dev-qt/qtwidgets:5
-	)
-	qt6? (
-		dev-qt/qtbase:6[gui,network,widgets]
-		dev-qt/qtsvg:6
-	)
+	dev-qt/qtbase:6[gui,network,widgets]
+	dev-qt/qtsvg:6
 	dev-libs/libuv:=
 	net-libs/grpc:=
 	dev-libs/protobuf:=
@@ -81,10 +74,7 @@ RDEPEND="
 	dev-libs/openssl:0=
 	${DEPEND}
 "
-BDEPEND="
-	!qt6? ( dev-qt/linguist-tools:5 )
-	qt6? ( dev-qt/qttools:6[linguist] )
-"
+BDEPEND="dev-qt/qttools:6[linguist]"
 
 src_unpack() {
 	if [[ ${PV} == 9999 ]]; then
@@ -119,7 +109,7 @@ src_configure() {
 		-DBUILD_TESTING=$(usex test)
 		-DQV2RAY_DISABLE_AUTO_UPDATE=ON
 		-DQV2RAY_HAS_BUILTIN_THEMES=$(usex themes)
-		-DQV2RAY_QT6=$(usex qt6)
+		-DQV2RAY_QT6=ON
 		-DQV2RAY_USE_V5_CORE=$(usex !xray)
 		-DUSE_SYSTEM_LIBUV=ON
 	)

@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,22 +22,16 @@ S="${WORKDIR}/QvPlugin-Trojan-${PV}"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="qt6 mysql +nat +reuseport +tcpfastopen"
+IUSE="mysql +nat +reuseport +tcpfastopen"
 
 DEPEND="
-	!qt6? (
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtnetwork:5
-		dev-qt/qtwidgets:5
-	)
-	qt6? ( dev-qt/qtbase:6[gui,network,widgets] )
+	dev-qt/qtbase:6[gui,network,widgets]
 	dev-libs/boost:=
 	dev-libs/openssl:0=
 	mysql? ( dev-db/mysql-connector-c:= )
 "
 RDEPEND="
-	>=net-proxy/qv2ray-2.7.0[qt6=]
+	>=net-proxy/qv2ray-2.7.0
 	${DEPEND}
 "
 
@@ -56,7 +50,7 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DQVPLUGIN_USE_QT6=$(usex qt6)
+		-DQVPLUGIN_USE_QT6=ON
 		-DENABLE_MYSQL=$(usex mysql)
 		-DENABLE_NAT=$(usex nat)
 		-DENABLE_REUSE_PORT=$(usex reuseport)
