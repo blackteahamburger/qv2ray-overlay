@@ -2,8 +2,8 @@
 <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
 <repositories xmlns="" version="1.0">
 	<repo quality="experimental" status="unofficial">
-	<name>qv2ray-overlay</name>
-	<description>overlay for Qv2ray</description>
+	<name>qv2ray-overlay (merged into gentoo-zh)</name>
+	<description>Please help fix qvplugin-ssr (Qv2ray/Qv2ray#1733)</description>
 	<homepage>https://github.com/blackteahamburger/qv2ray-overlay/</homepage>
 	<owner type="person">
 		<name>blackteahamburger</name>
